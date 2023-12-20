@@ -54,13 +54,14 @@ const Page: FC<pageProps> = ({}) => {
   }
 
   return (
-    <div className="w-screen h-screen bg-white flex justify-center items-center">
-      <div className="flex flex-col gap-10 pr-10">
+    <div className="h-screen min-w-max bg-white flex justify-center items-center gap-10 p-5 bg-green">
+      <div className="flex flex-col justify-center items-center gap-10 p-5 rounded-md bg-brown shadow-lg shadow-black">
+        <h2 className="font-sans text-lg font-semibold">Drawing App</h2>
         <HexColorPicker color={color} onChange={setColor} />
         <button
           type="button"
           onClick={() => socket.emit("clear")}
-          className="p-2 rounded-md border border-black"
+          className="p-2 rounded-md border border-black bg-beige"
         >
           Clear Canvas
         </button>
@@ -71,7 +72,7 @@ const Page: FC<pageProps> = ({}) => {
         ref={canvasRef}
         height={750}
         width={750}
-        className="border border-black rounded-md"
+        className="border border-black rounded-md bg-white"
       />
     </div>
   );
